@@ -294,10 +294,10 @@ table th {
     gap: var(--gap);
 }
 
-.form-grid legend{
-font-size: 1.6rem;
-font-style: italic;
-margin-bottom: 3rem;
+.form-grid legend {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 3rem;
 }
 
 .form-group {
@@ -321,8 +321,9 @@ margin-bottom: 3rem;
 
 .form-group input:focus,
 .form-group textarea:focus {
-box-shadow: 0 0 1rem 0.3rem var(--secundary-color);
+    box-shadow: 0 0 1rem 0.3rem var(--secundary-color);
 }
+
 body .full-width {
     width: 100%;
     flex: 1 1 100%;
@@ -343,47 +344,116 @@ body .full-width {
     color: var(--primary-color);
 }
 
-.form-group ::placeholder{
+.form-group ::placeholder {
     color: var(--light-grey-color);
 }
 
-.footer{
+.footer {
     text-align: center;
 }
 
-.footer a{
+.footer a {
     color: var(--primary-color);
     font-size: 1.6rem;
 }
 
-.heart{
+.heart {
     color: crimson;
 }
 
-.footer p{
+.footer p {
     margin: 0;
     padding: 3rem;
 }
 
+.close-menu{
+display: none;
+}
+
+.back-to-top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    transform: rotate(-90deg);
+    border: 0.1rem solid var(--primary-color);
+}
+
 /* MEDIA QUERIES */
 
-@media(max-width: 800px){
-    .home-content, .grid{
+@media(max-width: 800px) {
+
+    .home-content,
+    .grid {
         grid-template-columns: 1fr;
     }
-    .gallery-img{
+
+    .gallery-img {
         width: 100%;
         max-width: 100%;
         max-height: 100%;
     }
 
-    .gallery-img img{
+    .gallery-img img {
         width: 100%;
     }
-    
-    .work-content{
-    display: block;
+
+    .top3-content,
+    .gallery-content,
+    .work-content {
+        display: block;
+    }
+
+    /* MENU MOBILE */
+    .menu {
+        bottom: 0;
+        text-align: center;
+    }
+    .menu-content{
+        height: 100vh;
+    }
+    .menu-content, .menu-content ul{
+        flex-direction: column;
+        justify-content: center;
     }
     
-}
+    .menu{
+        display: none;
+    }
 
+    .close-menu-label::after{
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    /* × */
+    .close-menu:checked~.menu{
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after{
+        display: block;
+        content: '×';
+    }
+
+    .menu-spacing{
+        display: none;
+    }
+}
