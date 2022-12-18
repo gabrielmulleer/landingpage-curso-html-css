@@ -364,3 +364,26 @@ body .full-width {
     margin: 0;
     padding: 3rem;
 }
+
+/* MEDIA QUERIES */
+
+@media(max-width: 800px){
+    .home-content, .grid{
+        grid-template-columns: 1fr;
+    }
+    .gallery-img{
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .gallery-img img{
+        width: 100%;
+    }
+    
+    .work-content{
+    display: block;
+    }
+    
+}
+
