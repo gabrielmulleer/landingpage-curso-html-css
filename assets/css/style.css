@@ -390,6 +390,10 @@ display: none;
 
 @media(max-width: 800px) {
 
+    h2 {
+        font-size: 3.6rem;
+    }
+    
     .home-content,
     .grid {
         grid-template-columns: 1fr;
